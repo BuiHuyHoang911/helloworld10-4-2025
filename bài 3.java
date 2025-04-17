@@ -1,42 +1,25 @@
 import java.util.Scanner;
 
-public class WeekdayCalculator {
+public class AgeGroup {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.print("Nhập vào số ngày (0-6): ");
-        int dayNumber = scanner.nextInt();
+        System.out.print("Nhập tên của bạn: ");
+        String name = scanner.nextLine();
         
-        String dayName;
+        System.out.print("Nhập năm sinh của bạn: ");
+        int birthYear = scanner.nextInt();
+        int age = 2025 - birthYear; // Giả sử năm hiện tại là 2025
         
-        switch (dayNumber) {
-            case 0:
-                dayName = "Chủ nhật";
-                break;
-            case 1:
-                dayName = "Thứ hai";
-                break;
-            case 2:
-                dayName = "Thứ ba";
-                break;
-            case 3:
-                dayName = "Thứ tư";
-                break;
-            case 4:
-                dayName = "Thứ năm";
-                break;
-            case 5:
-                dayName = "Thứ sáu";
-                break;
-            case 6:
-                dayName = "Thứ bảy";
-                break;
-            default:
-                dayName = "Số ngày không hợp lệ! Vui lòng nhập từ 0 đến 6.";
+        if (age < 16) {
+            System.out.println("Bạn " + name + " ở độ tuổi vị thành niên.");
+        } else if (age >= 16 && age < 18) {
+            System.out.println("Bạn " + name + " ở độ tuổi trưởng thành.");
+        } else {
+            System.out.println("Bạn " + name + " đã già.");
         }
-        
-        System.out.println("Ngày tương ứng là: " + dayName);
         
         scanner.close();
     }
 }
+    
